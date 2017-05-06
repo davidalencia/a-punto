@@ -8,19 +8,51 @@
     >
     <ImageView
         android:id="@+id/im_item_icon"
-        android:layout_width="36dp"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
         android:src="@android:drawable/ic_menu_edit"
         android:tint="@color/colorPrimary"
 
         />
-    <TextView
-        android:id="@+id/Ibl_item_text"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="40dp"
+        android:orientation="vertical"
         android:paddingLeft="8dp"
-        android:text="dummy text"
-        />
+        android:id="@+id/holder_layout">
+
+        <TextView
+            android:id="@+id/Ibl_item_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="dummy text"
+            android:textSize="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/precio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="precio"
+                android:gravity="center_vertical"
+                android:layout_weight="2"/>
+
+            <TextView
+                android:id="@+id/hora"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical"
+                android:text="HH:MM pm" />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

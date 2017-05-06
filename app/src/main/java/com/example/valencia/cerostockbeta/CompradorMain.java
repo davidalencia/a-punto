@@ -22,11 +22,14 @@ public class CompradorMain extends AppCompatActivity {
         //Linear Manager: gridLayoutMAnager  or StaggeredGridLayoutManager
         recView.setLayoutManager(new LinearLayoutManager(this));
 
-
+        if (adapter!=null){
+            adapter.clear();
+        }
         adapter = new DerpAdapter(DerpData.getListData()/*Regresa data(ArrayList<>)*/, this);
         recView.setAdapter(adapter);
 
 
 
     }
+
 }
