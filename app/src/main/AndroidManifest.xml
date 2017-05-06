@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,8 +24,7 @@
         <activity android:name=".VendedorMain" />
         <activity android:name=".CompradorMain" />
         <activity android:name=".DetallesProd" />
-        <activity android:name=".VendedorPub"></activity>
-
+        <activity android:name=".VendedorPub" />
     </application>
 
 </manifest>

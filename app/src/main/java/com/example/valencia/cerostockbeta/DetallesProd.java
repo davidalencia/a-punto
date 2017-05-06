@@ -13,20 +13,31 @@ public class DetallesProd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_prod);
 
-        Vendedor vende = new Vendedor();
-
 
         Bundle b = getIntent().getExtras();
+
         TextView text = (TextView) findViewById(R.id.textView);
-        TextView hora = (TextView) findViewById(R.id.hora);
-        int alfa= (int) System.currentTimeMillis();
-        int beta=(int) System.currentTimeMillis();
+        TextView desc = (TextView) findViewById(R.id.descripcion);
+        TextView hor = (TextView) findViewById(R.id.hora);
+        TextView cate =(TextView) findViewById(R.id.textView2);
+        TextView loca =(TextView) findViewById(R.id.textView3);
+        TextView prec = (TextView) findViewById(R.id.textView4);
 
         String titulo = (String) b.get("titulo");
-        Toast.makeText(getApplicationContext(), ""+vende.getHora(),Toast.LENGTH_SHORT).show();
+        String descripcion ="Descripcion \n"+ b.get("info");
+        String hora ="hora de publicacion:  "+b.get("hora");
+        String catego ="categoria: "+b.get("categoria");
+        String locat ="lat: "+b.get("lat")+"   long: "+b.get("longi");
+        String precio = "Precio:  $"+b.get("precio");
+
 
         text.setText(titulo);
-        hora.setText("00:00");
+        desc.setText(descripcion);
+        hor.setText(hora);
+        cate.setText(catego);
+        loca.setText(locat);
+        prec.setText(precio);
+
 
     }
 }

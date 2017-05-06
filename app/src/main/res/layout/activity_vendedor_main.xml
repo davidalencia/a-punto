@@ -21,25 +21,27 @@
         android:layout_marginEnd="8dp" />
 
 
-
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="495dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
+        android:layout_marginTop="-17dp"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.22"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="match_parent"
@@ -49,12 +51,19 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
-                android:text="Cantidad" />
+                android:text="Descripcion" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
-                android:text="Precio" />
+                android:text="Categoria"
+                android:layout_weight="0.02" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Precio"
+                android:layout_weight="0.09" />
 
             <Button
                 android:id="@+id/submit"
@@ -93,6 +102,14 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
 
         </LinearLayout>
 

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.valencia.cerostockbeta.CompradorMain;
 import com.example.valencia.cerostockbeta.DetallesProd;
@@ -33,7 +34,9 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder>{
     private List<ListItem> listData;
     private LayoutInflater inflater;
     Context context;
+    int x[]={0};
 
+    int[] myImageList = new int[]{R.drawable.pin, R.drawable.limon, R.drawable.sandias};
 
     public  DerpAdapter(List<ListItem> listData, Context c){
         this.inflater =LayoutInflater.from(c);
@@ -52,9 +55,12 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder>{
     public void onBindViewHolder(final DerpHolder holder, int position) {
         final ListItem item = listData.get(position);
         holder.title.setText(item.getTitle());
-        holder.icon.setImageResource(item.getImageResId());
-        holder.precio.setText("$"+" precio");
+        holder.icon.setBackgroundResource(myImageList[(x[0]%3)]);
+//        holder.icon.setImageResource(item.getImageResId());
+        holder.precio.setText("$"+item.getPrecio());
         holder.hora.setText("00:00");
+        if (item.getTitle()== "limón"|| item.getTitle()=="piña"|| item.getTitle()=="sandia")
+            x[0]++;
 
 
         holder.layout.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +68,13 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder>{
             public void onClick(View v) {
                 Intent intento = new Intent(context, DetallesProd.class);
                 intento.putExtra("titulo", item.getTitle());
+                intento.putExtra("hora", "00:00");
+                intento.putExtra("precio", item.getPrecio());
+                intento.putExtra("info", item.getDescripcion());
+                intento.putExtra("categoria", item.getCategoria());
+                intento.putExtra("longi", 19.307107908596887);
+                intento.putExtra("lat", -99.1823199391365);
+
                 context.startActivity(intento);
             }
         });
